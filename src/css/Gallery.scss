@@ -31,6 +31,8 @@
 
 @media screen and (max-width: 600px) {
   .gallery {
+    display: flex;
+    flex-direction: column;
     columns: 1;
   }
 }
