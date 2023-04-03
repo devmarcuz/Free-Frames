@@ -1,0 +1,142 @@
+.image-popup {
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.904);
+  opacity: 0;
+  pointer-events: none;
+  transform: scale(0);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  user-select: none;
+
+  &.active {
+    opacity: 1;
+    pointer-events: all;
+    transform: scale(1);
+  }
+
+  .container {
+    width: 80%;
+    height: 80%;
+    background: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    // flex-direction: column;
+    border-radius: 10px;
+    position: relative;
+    // padding-bottom: 40px;
+
+    .header {
+      width: 100%;
+      padding: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: absolute;
+      top: 0;
+      left: 0;
+
+      .shape {
+        background: red;
+        width: 25px;
+        height: 25px;
+        border-radius: 50%;
+        cursor: pointer;
+      }
+
+      button {
+        cursor: pointer;
+        background: black;
+        border: none;
+        outline: none;
+        color: white;
+        font-family: inherit;
+        padding: 10px 15px;
+        border-radius: 5px;
+      }
+    }
+
+    img {
+      opacity: 0;
+      transform: scale(0.5);
+      width: auto;
+      height: 80%;
+      max-width: 80%;
+      object-fit: cover;
+      transition: 2s all ease;
+      transition-delay: 1s;
+      border-radius: 10px;
+      margin-top: 20px;
+
+      &.motion {
+        animation: motion 0.4s forwards ease-in-out;
+        animation-delay: 0.5s;
+      }
+    }
+
+    .controls {
+      .icon-left {
+        position: absolute;
+        top: 50%;
+        left: 5%;
+        font-size: 30px;
+        cursor: pointer;
+      }
+
+      .icon-right {
+        position: absolute;
+        top: 50%;
+        right: 5%;
+        font-size: 30px;
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .image-popup {
+    .container {
+      .header {
+        button {
+          padding: 8px 15px;
+          border-radius: 5px;
+          font-size: 10px;
+        }
+      }
+
+      img {
+        height: 70%;
+      }
+
+      .controls {
+        .icon-left {
+          left: 2%;
+          font-size: 20px;
+        }
+
+        .icon-right {
+          right: 2%;
+          font-size: 20px;
+        }
+      }
+    }
+  }
+}
+
+@keyframes motion {
+  0% {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}

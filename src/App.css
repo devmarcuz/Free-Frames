@@ -1,0 +1,25 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: poppins;
+  height: 100vh;
+}
+
+:root {
+  --nav-background: rgb(255, 104, 104);
+  --text-color: rgb(185, 184, 184);
+  --letter-bg-thick: rgb(0, 132, 141);
+  --letter-bg-light: rgb(1, 152, 163);
+}
+
+ul {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+}

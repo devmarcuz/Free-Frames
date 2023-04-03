@@ -1,0 +1,172 @@
+.image-popup {
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.904);
+  opacity: 0;
+  pointer-events: none;
+  -webkit-transform: scale(0);
+          transform: scale(0);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  overflow: hidden;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+.image-popup.active {
+  opacity: 1;
+  pointer-events: all;
+  -webkit-transform: scale(1);
+          transform: scale(1);
+}
+
+.image-popup .container {
+  width: 80%;
+  height: 80%;
+  background: white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-radius: 10px;
+  position: relative;
+}
+
+.image-popup .container .header {
+  width: 100%;
+  padding: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.image-popup .container .header .shape {
+  background: red;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.image-popup .container .header button {
+  cursor: pointer;
+  background: black;
+  border: none;
+  outline: none;
+  color: white;
+  font-family: inherit;
+  padding: 10px 15px;
+  border-radius: 5px;
+}
+
+.image-popup .container img {
+  opacity: 0;
+  -webkit-transform: scale(0.5);
+          transform: scale(0.5);
+  width: auto;
+  height: 80%;
+  max-width: 80%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -webkit-transition: 2s all ease;
+  transition: 2s all ease;
+  -webkit-transition-delay: 1s;
+          transition-delay: 1s;
+  border-radius: 10px;
+  margin-top: 20px;
+}
+
+.image-popup .container img.motion {
+  -webkit-animation: motion 0.4s forwards ease-in-out;
+          animation: motion 0.4s forwards ease-in-out;
+  -webkit-animation-delay: 0.5s;
+          animation-delay: 0.5s;
+}
+
+.image-popup .container .controls .icon-left {
+  position: absolute;
+  top: 50%;
+  left: 5%;
+  font-size: 30px;
+  cursor: pointer;
+}
+
+.image-popup .container .controls .icon-right {
+  position: absolute;
+  top: 50%;
+  right: 5%;
+  font-size: 30px;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 800px) {
+  .image-popup .container .header button {
+    padding: 8px 15px;
+    border-radius: 5px;
+    font-size: 10px;
+  }
+  .image-popup .container img {
+    height: 70%;
+  }
+  .image-popup .container .controls .icon-left {
+    left: 2%;
+    font-size: 20px;
+  }
+  .image-popup .container .controls .icon-right {
+    right: 2%;
+    font-size: 20px;
+  }
+}
+
+@-webkit-keyframes motion {
+  0% {
+    opacity: 0;
+    -webkit-transform: scale(0.5);
+            transform: scale(0.5);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
+@keyframes motion {
+  0% {
+    opacity: 0;
+    -webkit-transform: scale(0.5);
+            transform: scale(0.5);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+/*# sourceMappingURL=ImagePop.css.map */
