@@ -17,7 +17,7 @@ To run the application locally, follow these steps:
 1. Clone the respository:
 
 ```bash
-git clone [respository URL]
+git clone https://github.com/devmarcuz/Free-Frames
 ```
 
 2. Install dependencies:
@@ -46,7 +46,7 @@ To use the application, follow these steps:
 
 - ReactJS
 - Unsplash API
-- SASS
+- SCSS
 
 ## Contributing
 
